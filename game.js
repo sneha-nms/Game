@@ -3,6 +3,7 @@ const cells = document.querySelectorAll('[data-cell]');
 const statusDisplay = document.getElementById('status');
 const audio= document.getElementById('audio');
 const  audio1=document.getElementById('audio1');
+const  audio2=document.getElementById('audio2');
 // const restartButton = document.getElementById('restart');
 const PLAYER_X = 'X';
 const PLAYER_O = 'O';
@@ -24,7 +25,8 @@ function handleCellClick(event) {
 
     cell.textContent = currentPlayer;
   
-   
+    audio2.play();
+    
 
     if (checkWinner(currentPlayer)) {
         gameActive = false;

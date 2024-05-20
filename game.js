@@ -19,14 +19,14 @@ function handleCellClick(event) {
     
     const cell = event.target;
     
-    // audio.play();
+    
     if (!gameActive || cell.textContent !== '') return;
    
 
     cell.textContent = currentPlayer;
   
     audio2.play();
-    
+
 
     if (checkWinner(currentPlayer)) {
         gameActive = false;

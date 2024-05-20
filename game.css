@@ -1,7 +1,8 @@
 body{
+    overflow: hidden;
     width: 100vw;
     height: 100vh;
-    background-color: aqua;
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,8 +24,15 @@ body{
     cursor: pointer;
 
     font-size: 25px;
+    
 
 
+}
+.box:hover{
+        -ms-transform: scale(1.5); /* IE 9 */
+        -webkit-transform: scale(1.5); /* Safari 3-8 */
+        transform: scale(1.5); 
+      
 }
 
 #status{

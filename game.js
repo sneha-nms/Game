@@ -2,6 +2,7 @@
 const cells = document.querySelectorAll('[data-cell]');
 const statusDisplay = document.getElementById('status');
 const audio= document.getElementById('audio');
+const  audio1=document.getElementById('audio1');
 // const restartButton = document.getElementById('restart');
 const PLAYER_X = 'X';
 const PLAYER_O = 'O';
@@ -14,23 +15,30 @@ const winningCombinations = [
 ];
 
 function handleCellClick(event) {
+    
     const cell = event.target;
+    
     // audio.play();
     if (!gameActive || cell.textContent !== '') return;
+   
 
     cell.textContent = currentPlayer;
+  
    
 
     if (checkWinner(currentPlayer)) {
         gameActive = false;
         statusDisplay.textContent = `Player ${currentPlayer} wins!`;
-        audio.play();
+        
+        audio1.play();
     } else if ([...cells].every(cell => cell.textContent !== '')) {
         gameActive = false;
         statusDisplay.textContent = 'Draw!';
+        audio.play();
     } else {
         currentPlayer = currentPlayer === PLAYER_X ? PLAYER_O : PLAYER_X;
         statusDisplay.textContent = `It's ${currentPlayer}'s turn`;
+       
     }
 }
 
